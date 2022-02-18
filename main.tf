@@ -23,6 +23,6 @@ resource "azurerm_network_interface" "nic" {
   ip_configuration {
     name                          = "ipconfig"
     private_ip_address_allocation = "Dynamic"
-    subnet_id                     = data.tfe_outputs.ws-mgmt.values.mgmt-vnets[0]
+    subnet_id                     = data.tfe_outputs.ws-mgmt.values.mgmt-vnets[0].id
   }
 }
