@@ -22,6 +22,6 @@ resource "azurerm_network_interface" "nic" {
   location            = azurerm_resource_group.rg.location
   ip_configuration {
     name      = "ipconfig"
-    subnet_id = data.tfe_outputs.ws-mgmt.outputs.mgmt-vnets["servers"]
+    subnet_id = data.tfe_outputs.ws-mgmt.values.mgmt-vnets["servers"]
   }
 }
