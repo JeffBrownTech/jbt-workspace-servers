@@ -12,17 +12,17 @@ data "tfe_outputs" "ws-mgmt" {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "rg-nics"
+  name     = "rg-servers"
   location = "westus2"
 }
 
 resource "azurerm_network_interface" "nic" {
-  name                = "server01-nic"
+  name                = "identity01-nic"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   ip_configuration {
     name                          = "ipconfig"
     private_ip_address_allocation = "Dynamic"
-    subnet_id                     = data.tfe_outputs.ws-mgmt.values.mgmt-vnets[0].id
+    subnet_id                     = data.tfe_outputs.ws-mgmt.values.identity_snet_id
   }
 }
