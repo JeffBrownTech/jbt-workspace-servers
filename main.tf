@@ -12,7 +12,7 @@ data "tfe_outputs" "ws-mgmt" {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "rg-servers"
+  name     = "rg-${local.prefix}}-servers"
   location = "westus2"
 }
 
