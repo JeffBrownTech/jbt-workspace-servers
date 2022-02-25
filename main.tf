@@ -17,7 +17,7 @@ resource "azurerm_resource_group" "rg-identity" {
 }
 
 resource "azurerm_resource_group" "rg-app1" {
-  name     = "rg-${local.prefix}}-app1"
+  name     = "rg-${local.prefix}-app1"
   location = "westus2"
 }
 
