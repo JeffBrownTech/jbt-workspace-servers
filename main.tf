@@ -12,7 +12,7 @@ data "tfe_outputs" "ws-mgmt" {
 }
 
 resource "azurerm_resource_group" "rg-identity" {
-  name     = "rg-${local.prefix}}-identity"
+  name     = "rg-${local.prefix}-identity"
   location = "westus2"
 }
 
